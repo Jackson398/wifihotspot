@@ -166,4 +166,13 @@ ScanResult类主要是通过Wi-Fi硬件的扫描来获取一些周边的Wi-Fi热
             |updateNetwork(WifiConfiguration config)        |更新一个网络连接的信息                      |
             ----------------------------------------------------------------------------------------------
             
+Wi-Fi网卡的状态是由一系列的整形常量来表示的。
+WIFI_STATE_DISABLE: Wi-Fi网卡不可用，用整形常量1表示.
+WIFI_STATE_DISABLING:Wi-Fi网卡正在关闭，用整形常量0表示。
+WIFI_STATE_ENABLED:Wi-Fi网卡可用，用整形常量3表示.
+WIFI_STATE_ENBBLING:Wi-Fi网卡正在打开，启动需要一段时间，用整形常量2表示.
+WIFI_STATE_UNKNOWN:未知网络状态，用整形常量4表示。
+此外，wifiManager还提供了一个子类wifiManagerLock.wifiManagerLock的作用是：
+在普通的状态下，若Wi-Fi的状态处于闲置，那么网络将会暂时中断；但若把当前的网络状态锁上，那么Wi-Fi连通将会保持在一定状态，在结束
+锁之后，才会恢复常态。
  
